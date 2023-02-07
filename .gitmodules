@@ -1,0 +1,6 @@
+[submodule "basic-react2"]
+	path = basic-react2
+	url = https://github.com/lttlsunshn/lttlsunshn.github.io.git
+[submodule "basic-react"]
+	path = basic-react
+	url = https://github.com/lttlsunshn/lttlsunshn.github.io.git

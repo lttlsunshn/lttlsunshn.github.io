@@ -1,0 +1,229 @@
+@font-face {
+  font-family: "Happiness-Sans-Title";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --colorA: #b8d4d7;
+  --colorB: #fceed1;
+  --colorC: #e3563c;
+  --colorD: #e6e6e5;
+  --colorE: #38383a;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Happiness-Sans-Title";
+  min-width: 320px;
+}
+
+body {
+  padding: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: var(--colorE);
+  background-color: var(--colorA);
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  height: calc(100% - 60px);
+  margin-top: 10px;
+}
+
+.sidebar {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--colorE);
+  background-color: var(--colorB);
+  padding: 10px;
+}
+
+.sidebar > span {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+  border: 2px solid var(--colorA);
+  margin-left: 10px;
+  align-content: flex-start;
+  overflow-y: scroll;
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 200px;
+  min-height: 150px;
+  padding: 10px;
+  background-color: var(--colorB);
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.card > img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.card > span {
+  text-align: center;
+  word-break: break-all;
+}
+
+/* 추가 */
+.add-btn {
+  padding: 7px 10px;
+  background: var(--colorA);
+  color: var(--colorE);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.add-btn:hover {
+  background: var(--colorC);
+  color: var(--colorE);
+}
+
+.submit-btn {
+  padding: 7px 10px;
+  background: var(--colorA);
+  color: var(--colorE);
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background: var(--colorC);
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  outline: none;
+  border: 2px solid var(--colorB);
+  border-radius: 6px;
+}
+
+.input:focus {
+  border-color: var(--colorA);
+}
+
+.modal-background {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  /* z-index: 10; */
+}
+
+.modal-window {
+  display: flex;
+  /* display: none; */
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  /* z-index: 11; */
+  padding: 20px;
+  /* centering */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  /* text-align: center; */
+  animation: slidefade 0.35s linear;
+}
+
+#modal {
+  display: none;
+}
+
+#modal.active {
+  display: block;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.modal-close:hover {
+  transform: scale(1.2);
+  color: var(--colorC);
+}
+
+@media (max-width: 1000px) {
+  .card {
+    background: var(--colorA);
+  }
+}
+@media (max-width: 700px) {
+  .card {
+    background: var(--colorC);
+  }
+}
+
+@keyframes slidefade {
+  0% {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}

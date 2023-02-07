@@ -1,0 +1,99 @@
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서울에서 가장 많이 볼 수 있는 새</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <span class="title">서울에서 가장 많이 볼 수 있는 새</span>
+    </header>
+    <main>
+      <div class="sidebar" id="sidebar">
+        <!-- 추가 버튼 -->
+        <button
+          type="button"
+          class="add-btn"
+          id="addItem"
+          onclick="openModal()"
+        >
+          <img src="images/add.png" alt="add" width="20px" />
+        </button>
+
+        <span>직박구리</span>
+        <span>까치</span>
+        <span>참새</span>
+        <span>박새</span>
+        <span>멧비둘기</span>
+        <span>쇠박새</span>
+      </div>
+      <section class="container">
+        <div class="card">
+          <img src="./images/01_brown-eared_bulbul .jpeg" alt="직박구리" />
+          <span>숲속의 고요함을 깨는 시끄러운 수다쟁이 직박구리</span>
+        </div>
+        <div class="card">
+          <img src="./images/02_magpie.jpeg" alt="까치" />
+          <span>길조로 사랑받았던 까치</span>
+        </div>
+        <div class="card">
+          <img src="./images/03_sparrow.jpeg" alt="참새" />
+          <span>우리나라 사람들과 가장 가깝게 살고 있는 참새</span>
+        </div>
+        <div class="card">
+          <img src="./images/04_great_tit.jpeg" alt="박새" />
+          <span>검정색 긴 넥타이를 한 수다쟁이 박새</span>
+        </div>
+        <div class="card">
+          <img src="./images/05_turtle_dove.jpeg" alt="멧비둘기" />
+          <span>빛바랜 평화와 통신의 상징 멧비둘기</span>
+        </div>
+        <div class="card">
+          <img src="./images/06_marsh_tit.jpeg" alt="쇠박새" />
+          <span>식량 저장고를 가지고 있는 쇠박새</span>
+        </div>
+      </section>
+    </main>
+    <!-- 모달창 -->
+    <div class="modal-background" id="modal">
+      <form class="modal-window" id="addItemForm">
+        <span class="modal-close" id="closeModal" onclick="closeModal()"
+          >X</span
+        >
+        <label for="name" class="label">이름</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="(예) 참새"
+          class="input"
+          maxlength="10"
+          required
+        />
+
+        <label for="image" class="label">이미지</label>
+        <input
+          id="image"
+          type="text"
+          placeholder="URL을 입력하세요."
+          class="input"
+          required
+        />
+
+        <label for="content" class="label">설명</label>
+        <input
+          id="content"
+          type="text"
+          placeholder="(예) 우리나라 사람들과 가장 가깝게 살고 있는 참새"
+          class="input"
+          maxlength="10"
+          required
+        />
+        <button type="submit" class="submit-btn">저장</button>
+      </form>
+    </div>
+
+    <script src="./modal.js"></script>
+    <script src="./addItem.js"></script>
+  </body>
+</html>
